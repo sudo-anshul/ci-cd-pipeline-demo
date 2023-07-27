@@ -30,7 +30,6 @@ The DevOpsFlow project is created to showcase the power of CI/CD pipelines in au
 - HTML
 - CSS (Tailwind CSS)
 - JavaScript
-- Firebase (for hosting and deployment)
 - Docker (for containerization)
 - GitHub Actions (for CI/CD)
 - Other relevant dependencies (list them here)
@@ -42,5 +41,19 @@ To run this CI/CD Pipeline Demo on your local machine, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/sudo-anshul/ci-cd-pipeline-demo.git
-   cd ci-cd-pipeline-demo
+   git clone https://github.com/your-username/CI-CD-Pipeline-Demo.git
+   cd CI-CD-Pipeline-Demo
+
+## Usage
+
+After setting up the project, you can trigger the CI/CD pipeline by pushing changes to the main branch. The pipeline will automatically build and deploy the web application to a server or a cloud platform (e.g., AWS, GCP, Azure).
+
+(Include any additional usage instructions here, such as how to access the deployed application or how to view CI/CD logs.)
+
+## Contributing
+
+Contributions are welcome! If you find any issues or have ideas for improvements, feel free to open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
