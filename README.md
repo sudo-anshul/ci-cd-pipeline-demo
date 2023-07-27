@@ -41,7 +41,7 @@ To run this CI/CD Pipeline Demo on your local machine, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/CI-CD-Pipeline-Demo.git
+   git clone [https://github.com/your-username/CI-CD-Pipeline-Demo.git](https://github.com/sudo-anshul/ci-cd-pipeline-demo.git)
    cd CI-CD-Pipeline-Demo
 
 ## Usage
