@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CI/CD Pipeline Setup</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Replace the link above with your own Tailwind CSS link if you have it hosted locally -->
+</head>
+<body class="bg-gray-100">
+    <a href="index.html" class="absolute top-8 left-20 px-6 py-3 bg-gray-700 text-white rounded-lg shadow-md hover:bg-gray-800 transition-colors" id="backButton">Back</a>
+        
+    <script src="script.js"></script>
+    
+    <div class="container mx-auto p-8">
+          <h1 class="text-4xl font-bold text-center mb-8">CI/CD Pipeline Information</h1>
+      
+          <!-- GitHub Actions Workflow -->
+          <div class="p-6 bg-white rounded-lg shadow-md my-4">
+            <h2 class="text-2xl font-semibold mb-4">CI/CD Automation with GitHub Actions</h2>
+            <p>
+              To automate the build and deployment process, GitHub Actions is utilized. A YAML file named <code class="bg-gray-200 p-1">ci-cd-pipeline.yml</code> is configured in the repository to define the workflow.
+            </p>
+            <pre class="bg-gray-200 p-4 mt-4">
+      name: CI/CD Pipeline
+      
+      on:
+        push:
+          branches:
+            - main
+      
+      jobs:
+        build-and-deploy:
+          runs-on: ubuntu-latest
+      
+          steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+      
+            - name: Setup Node.js
+              uses: actions/setup-node@v2
+              with:
+                node-version: '14.x'
+      
+            - name: Install dependencies
+              run: npm install
+      
+            - name: Build website
+              run: npm run build
+      
+            - name: Deploy to Firebase Hosting
+              uses: w9jds/firebase-action@master
+              with:
+                args: deploy --only hosting
+              env:
+                FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+            </pre>
+          </div>
+      
+          <!-- Firebase Hosting -->
+          <div class="p-6 bg-white rounded-lg shadow-md my-4">
+            <h2 class="text-2xl font-semibold mb-4">Firebase Hosting</h2>
+            <p>
+              The website is deployed to Firebase Hosting, which provides a fast and reliable hosting solution. Firebase Hosting automatically serves the latest deployed version of the website to visitors, ensuring a seamless experience.
+            </p>
+            <p class="mt-4">
+              Website URL: <a href="https://ci-cd-pipeline-demo.firebaseapp.com" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">https://ci-cd-pipeline-demo.firebaseapp.com</a>
+            </p>
+            <p class="mt-4">
+              Feel free to explore the website and its source code on GitHub to see the magic of CI/CD in action!
+            </p>
+          </div>
+      
+          <!-- Code Showcase -->
+          <div class="p-6 bg-white rounded-lg shadow-md my-4">
+            <h2 class="text-2xl font-semibold mb-4">Code Showcase</h2>
+            <p>
+              In this page, you can view the complete process of the CI/CD pipeline in action. The automation ensures that every code change pushed to the "main" branch triggers a build and deployment, resulting in an always up-to-date and functioning website. The use of GitHub Actions and Firebase Hosting makes the entire development and deployment process efficient and hassle-free.
+            </p>
+            <p class="mt-4">
+              Please note that the actual code snippets and explanations of the website's features and functionalities can be added in the provided space below. This way, visitors can gain insight into the specific code used to build the website and better understand its working.
+            </p>
+            <!-- Add your code snippets and explanations here -->
+          </div>
+      
+        </div>
+      </body>
+
+
+  <div class="container mx-auto p-8">
+    <h1 class="text-4xl font-bold text-center mb-8">CI/CD Pipeline Setup</h1>
+
+    <!-- Create a Git Repository -->
+    <div class="p-6 bg-white rounded-lg shadow-md my-4">
+      <h2 class="text-2xl font-semibold mb-4">Create a Git Repository</h2>
+      <p>
+        Begin by creating a Git repository on GitHub to host your website's source code. You can create a new repository or use an existing one.
+      </p>
+    </div>
+
+    <!-- Add Website Code -->
+    <div class="p-6 bg-white rounded-lg shadow-md my-4">
+      <h2 class="text-2xl font-semibold mb-4">Add Website Code</h2>
+      <p>
+        Add your website's HTML, CSS (with Tailwind CSS), and JavaScript code to the repository. Make sure your code is functional and ready for deployment.
+      </p>
+    </div>
+
+    <!-- Set Up GitHub Actions Workflow -->
+    <div class="p-6 bg-white rounded-lg shadow-md my-4">
+      <h2 class="text-2xl font-semibold mb-4">Set Up GitHub Actions Workflow</h2>
+      <p>
+        Create a new file in your repository named <code class="bg-gray-200 p-1">ci-cd-pipeline.yml</code> (or any name you prefer) to define the GitHub Actions workflow.
+      </p>
+      <p>
+        In the YAML file, define the workflow name and specify the event that will trigger the pipeline. In this example, the pipeline is triggered on each push to the "main" branch.
+      </p>
+      <p>
+        Configure the steps in the workflow. In the example provided earlier, the workflow performs the following steps:
+      </p>
+      <ul class="list-disc ml-8">
+        <li>Checks out the repository to get the latest code.</li>
+        <li>Sets up Node.js environment and installs dependencies using npm.</li>
+        <li>Builds the website using the specified build script (e.g., npm run build).</li>
+        <li>Deploys the website to Firebase Hosting using the Firebase CLI.</li>
+      </ul>
+    </div>
+
+    <!-- Configure Firebase Hosting -->
+    <div class="p-6 bg-white rounded-lg shadow-md my-4">
+      <h2 class="text-2xl font-semibold mb-4">Configure Firebase Hosting</h2>
+      <p>
+        Set up a Firebase project if you don't have one already. You can do this through the Firebase console (<a href="https://console.firebase.google.com/" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">https://console.firebase.google.com/</a>).
+      </p>
+      <p>
+        Install the Firebase CLI globally on your local machine using npm: <code class="bg-gray-200 p-1">npm install -g firebase-tools</code>.
+      </p>
+      <p>
+        Authenticate the Firebase CLI with your Google account: <code class="bg-gray-200 p-1">firebase login</code>.
+      </p>
+      <p>
+        Initialize Firebase Hosting for your project: <code class="bg-gray-200 p-1">firebase init hosting</code>.
+      </p>
+      <p>
+        Follow the prompts to select the project and configure Firebase Hosting settings. Make sure to specify the "public" directory where your built website files are located.
+      </p>
+    </div>
+
+    <!-- Securely Store Firebase Token -->
+    <div class="p-6 bg-white rounded-lg shadow-md my-4">
+      <h2 class="text-2xl font-semibold mb-4">Securely Store Firebase Token</h2>
+      <p>
+        To deploy to Firebase Hosting from GitHub Actions, you need to store the Firebase token as a secret in your GitHub repository.
+      </p>
+      <p>
+        Go to your repository settings on GitHub, then navigate to "Secrets".
+      </p>
+      <p>
+        Create a new secret with the name <code class="bg-gray-200 p-1">FIREBASE_TOKEN</code> and paste your Firebase token as the value. The token should have the necessary permissions to deploy to Firebase Hosting.
+      </p>
+    </div>
+
+    <!-- Test the CI/CD Pipeline -->
+    <div class="p-6 bg-white rounded-lg shadow-md my-4">
+      <h2 class="text-2xl font-semibold mb-4">Test the CI/CD Pipeline</h2>
+      <p>
+        Push a code change to the "main" branch of your repository. This will trigger the GitHub Actions workflow.
+      </p>
+      <p>
+        GitHub Actions will automatically run the defined workflow. It will check out the code, install dependencies, build the website, and deploy it to Firebase Hosting.
+      </p>
+      <p>
+        Once the deployment is successful, you should be able to access your website at the Firebase Hosting URL (e.g., <a href="https://your-firebase-project-id.firebaseapp.com" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">https://your-firebase-project-id.firebaseapp.com</a>).
+      </p>
+    </div>
+
+    <!-- Review and Iterate -->
+    <div class="p-6 bg-white rounded-lg shadow-md my-4">
+      <h2 class="text-2xl font-semibold mb-4">Review and Iterate</h2>
+      <p>
+        Review the logs and outputs of the GitHub Actions workflow to ensure everything is working as expected. Address any issues that may arise during the build and deployment process.
+      </p>
+      <p>
+        If needed, make changes to your website code or the CI/CD pipeline configuration (e.g., in the <code class="bg-gray-200 p-1">ci-cd-pipeline.yml</code> file) and push the changes to test the updates in the pipeline.
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
