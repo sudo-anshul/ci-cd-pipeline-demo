@@ -1,6 +1,6 @@
 # DevOpsFlow - CI/CD Pipeline Demo
 
-![DevOpsFlow Banner](link-to-banner-image)
+![DevOpsFlow Banner](https://img.freepik.com/free-vector/development-operations-banner-devops-concept_107791-2220.jpg?w=996&t=st=1690454845~exp=1690455445~hmac=3c1d6906097f85e4286b8c755e9d5725c3791be0fa71ee0bfb3f6b174e6c1eab)
 
 Welcome to DevOpsFlow, a CI/CD Pipeline Demo project. This project demonstrates the setup and implementation of a Continuous Integration and Continuous Deployment (CI/CD) pipeline for automating the build and deployment process of a sample web application.
 
