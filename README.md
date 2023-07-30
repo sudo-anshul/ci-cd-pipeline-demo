@@ -30,6 +30,7 @@ The DevOpsFlow project is created to showcase the power of CI/CD pipelines in au
 - HTML
 - CSS (Tailwind CSS)
 - JavaScript
+- Firebase
 - Docker (for containerization)
 - GitHub Actions (for CI/CD)
 - Other relevant dependencies (list them here)
@@ -48,7 +49,7 @@ To run this CI/CD Pipeline Demo on your local machine, follow these steps:
 
 After setting up the project, you can trigger the CI/CD pipeline by pushing changes to the main branch. The pipeline will automatically build and deploy the web application to a server or a cloud platform (e.g., AWS, GCP, Azure).
 
-(Include any additional usage instructions here, such as how to access the deployed application or how to view CI/CD logs.)
+Firebase Hosting provides fast and secure hosting for your web app, static and dynamic content, and microservices.
 
 ## Contributing
 
